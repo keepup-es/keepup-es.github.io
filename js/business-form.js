@@ -325,7 +325,7 @@ function setButtonsHandlers() {
         let prevStep = button.attr("data-prev");
         gtag('event', 'business_form', {
         'event_category': 'previous button',
-        'event_label': prevStep+1,
+        'event_label': parseInt(prevStep)+1,
         'transport_type': 'beacon',
         'event_callback': function(){console.log(true);}
     });
