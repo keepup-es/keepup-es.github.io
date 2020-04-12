@@ -192,6 +192,10 @@ function showStep(next) {
         });
     });
 
+    document.querySelector("form#business-form").scrollIntoView({
+        behavior: 'smooth'
+    });
+
     setProgressBar(next);
 }
 

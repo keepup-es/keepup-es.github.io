@@ -897,17 +897,13 @@ Business signup page
 }
 
 .business-form .step .step-footer {
-	display: inline-block;
-	vertical-align: top;
 	width: 100%;
 	height: auto;
-
-	display: flex;
-	justify-content: space-between;
 }
 
 .business-form .step .step-footer .step-control {
 	padding: 15px 20px;
+	margin-left: 20px;
 }
 
 .business-form .step .step-footer .step-control.disabled {
