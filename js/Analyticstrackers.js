@@ -12,3 +12,12 @@ var getLinks = function(coming_from, url) {
     'event_callback': function(){document.location = url;}
   });
 }
+
+var getbuttons = function(button, situation, url) {
+  gtag('event', button, {
+    'event_category': situation,
+    'event_label': url,
+    'transport_type': 'beacon',
+    'event_callback': function(){console.log(1)}
+  });
+}
