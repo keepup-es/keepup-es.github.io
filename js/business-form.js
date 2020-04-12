@@ -142,6 +142,14 @@ function getFormData() {
 }
 
 /**
+ * Form reset 
+ */
+function resetForm() {
+    $("form.business-form").trigger("reset");
+    disableQuestionsFrom(2);
+}
+
+/**
  * Question enablers & disablers 
  */
 
@@ -149,7 +157,7 @@ function enableQuestion(question) {
     $(`[data-question="${question}"]`).removeClass("disabled");
 }
 
-function disableQuestionsFrom(first, last = 6) {
+function disableQuestionsFrom(first, last = 7) {
     for (let i = first; i <= last; i++) {
         let questionElement = $(`[data-question="${i}"]`);
         questionElement.addClass("disabled");
@@ -211,9 +219,22 @@ function isQuestionCompleted(question) {
 
 function checkStepOne() {
     if (isQuestionCompleted(1)) {
-        enableQuestion(2);
+        getAnswerTo(1, location => {
+            console.log(location);
+            if (location !== "Madrid") {
+                resetForm();
+                showStep("wip-location");
+            } else enableQuestion(2);
+        }, 0);
+
         if (isQuestionCompleted(2)) {
-            enableQuestion(3);
+            getAnswerTo(2, sector => {
+                if (sector !== "Salud y belleza") {
+                    resetForm();
+                    showStep("wip-sector");
+                } else enableQuestion(3);
+            }, 0);
+
             if (isQuestionCompleted(3)) enableStepControls(1);
             else disableStepControls(1);
         } else {
