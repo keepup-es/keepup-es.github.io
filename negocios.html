@@ -90,22 +90,21 @@
 					</div>
 				</div>
 				<div class="col-lg-6">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec laoreet ac nunc ut congue. Suspendisse vitae consequat eros. Praesent pellentesque blandit vehicula. Cras felis sem, convallis a convallis vitae, lacinia volutpat felis. Etiam gravida tempor est eu ullamcorper. </p>
-					<p>Nullam mauris tellus, imperdiet quis ornare vel, mollis id ex. Aenean posuere laoreet nulla, sed volutpat elit tincidunt eu.</p>
+					<p>Si tienes un negocio y estás pasando por momentos complicados, queremos ayudarte! Completa el formulario en 3 simples pasos y podremos analizar tu situación y proponerte soluciones. </p>
 				</div>
 			</div>
 		</div>
 	</section>
 	<section class="business-form-section spad">
 		<div class="container">
-			<div class="row">
-				<div class="col-8 offset-2">
+			<div class="row justify-content-center">
+				<div class="col-xl-8 col-lg-10 col-sm-11">
 					<div class="text-white text-center">
 						<h3 class="mb-3">Completa el formulario</h3>
 						<p>Son solo 5 minutos y necesitas consultar nada, <b>solo necesitamos saber lo que te preocupa</b>... <i class="far fa-smile"></i></p>
 					</div>
 
-					<form class="business-form">
+					<form id="business-form" class="business-form">
 						<div class="form-progress">
 							<span class="step-point general">
 								<i class="fas fa-address-card"></i>
@@ -260,9 +259,9 @@
 								</div>
 							</div>
 
-							<div class="step-footer row align-items-center">
-								<span class="offset-4 col-4 text-center">Paso 1 de 3</span>
-								<button type="button" class="col-4 step-control site-btn next disabled" data-next="2">Siguiente <i class="fas fa-arrow-right"></i></button type="button">
+							<div class="step-footer row justify-content-center">
+								<span class="col-12 mb-2 text-center">Paso 1 de 3</span>
+								<button type="button" class="mt-2 mb-2 col-md-4 col-sm-12 step-control site-btn next disabled" data-next="2">Siguiente <i class="fas fa-arrow-right"></i></button type="button">
 							</div>
 						</div>
 
@@ -298,7 +297,7 @@
 										<p>Gasto aproximado en alquiler o préstamo derivados del local. Si es de tu propiedad, selecciona la opción "En propiedad".</p>
 									</div>
 									<div class="col-md-6 text-center">
-										<input id="rental" class="user-input" type="number" min="0" placeholder="€/mes">
+										<input id="rental" name="rental" class="user-input" type="number" min="0" placeholder="€/mes">
 										<div class="mt-2">
 											<input id="property" class="user-input" type="checkbox" value="property">
 											<label for="property">En propiedad</label>
@@ -308,9 +307,9 @@
 							</div>
 							
 							<div class="step-footer row align-items-center">
-								<button type="button" class="col-4 step-control site-btn sb-c2 prev" data-prev="1"><i class="fas fa-arrow-left"></i> Anterior</button>
-								<span class="col-4 text-center">Paso 2 de 3</span>
-								<button type="button" class="col-4 step-control site-btn next disabled" data-next="3">Siguiente <i class="fas fa-arrow-right"></i></button>
+								<span class="col-12 mb-2 text-center">Paso 2 de 3</span>
+								<button type="button" class="mt-2 mb-2 col-md-4 col-sm-12 step-control site-btn sb-c2 prev" data-prev="1"><i class="fas fa-arrow-left"></i> Anterior</button>
+								<button type="button" class="mt-2 mb-2 col-md-4 col-sm-12 step-control site-btn next disabled" data-next="3">Siguiente <i class="fas fa-arrow-right"></i></button>
 							</div>
 						</div>
 
@@ -338,9 +337,9 @@
 								</div>
 							</div>
 							<div class="step-footer row align-items-center">
-								<button type="button" class="col-4 step-control site-btn sb-c2 prev" data-prev="2"><i class="fas fa-arrow-left"></i> Anterior</button>
-								<span class="col-4 text-center">Paso 3 de 3</span>
-								<button type="button" class="col-4 step-control site-btn submit disabled">Finalizar <i class="fas fa-flag-checkered"></i></button>
+								<span class="col-12 mb-2 text-center">Paso 3 de 3</span>
+								<button type="button" class="mt-2 mb-2 col-md-4 col-sm-12 step-control site-btn sb-c2 prev" data-prev="2"><i class="fas fa-arrow-left"></i> Anterior</button>
+								<button type="button" class="mt-2 mb-2 col-md-4 col-sm-12 step-control site-btn submit disabled">Finalizar <i class="fas fa-flag-checkered"></i></button>
 							</div>
 						</div>
 
@@ -372,6 +371,7 @@
 										<input id="contact-location" type="email" placeholder="ejemplo@gmail.com">
 									</div>
 								</div>
+								<a class="mr-5" href="/negocios.html">Volver</a>
 								<button type="button" id="contact-location-submit" class="site-btn mt-5">¡Avisame!</button>
 							</div>
 						</div>
@@ -388,6 +388,7 @@
 										<input id="contact-sector" type="email" placeholder="ejemplo@gmail.com">
 									</div>
 								</div>
+								<a class="mr-5" href="/negocios.html">Volver</a>
 								<button type="button" id="contact-sector-submit" class="site-btn mt-5">¡Avisame!</button>
 							</div>
 						</div>
