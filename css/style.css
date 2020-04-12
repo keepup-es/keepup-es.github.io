@@ -377,9 +377,14 @@ Hero section
 Intro section
  -------------------*/
 
-.intro-section p {
+.intro-business-section p,
+.intro-users-section p {
 	margin-bottom: 35px;
 	padding-top: 10px;
+}
+
+.intro-business-section {
+	background: #0a183d;
 }
 
 /* ----------------
