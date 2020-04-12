@@ -69,7 +69,7 @@ function getAnswerTo(question, callback, time = 2000) {
     let element = $(`.question[data-question="${question}"]`);
     let option = element.find("input:checked");
     let optionInput = element.find(".option-input");
-    let input = element.find(".user-input");
+    let input = element.find(".user-input:not([type='checkbox'])");
 
     if (option.length && option.val() !== "") {
         if (option.val() === "other") {
@@ -80,7 +80,8 @@ function getAnswerTo(question, callback, time = 2000) {
                 clearInterval(timeout);
                 timeout = setTimeout(() => callback(optionInput.text()), time);
             });
-        } else if (option.length > 1) {
+        } else if (option.val() === "property") callback(0);
+        else if (option.length > 1) {
             let selection = [];
             $.each(option, (_, checked) => selection.push($(checked).val()));
             callback(selection);
@@ -130,7 +131,10 @@ function getFormData() {
     getAnswerTo(4, employees => data.employees = employees, 0); 
     getAnswerTo(5, billing => data.billing = billing, 0);
     data.yearly = $("input#yearly-billing").val() !== "";
-    getAnswerTo(6, rental => data.rental = rental, 0); 
+    getAnswerTo(6, rental => {
+        data.rental = rental;
+        if ($("#property").is(":checked")) data.rental = 0;
+    }, 0); 
     getAnswerTo(7, email => data.email = email, 0); 
     getAnswerTo(8, extra => data.extra = extra, 0); 
 
@@ -298,7 +302,6 @@ function storeEmail(data, callback) {
 function setButtonsHandlers() {
     // Next button handler
     let nextButtons = $("button.step-control.next");
-    console.log(nextButtons);
     nextButtons.on("click", event => {
         let button = $(event.target);
         let nextStep = button.attr("data-next");
