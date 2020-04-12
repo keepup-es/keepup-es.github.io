@@ -63,6 +63,28 @@ function emailValidator(question) {
 }
 
 /**
+ * 
+ * Question answer getter 
+ */
+function getAnswerTo(question, callback) {
+    let element = $(`.question[data-question="${question}"]`);
+    let option = element.find("input:checked");
+    let optionInput = element.find(".option-input");
+    let input = element.find("input.user-input");
+
+
+    if (option && option.val() !== "") {
+        if (option.val() === "other") {
+            let timeout = null;
+            optionInput.on("input", e => {
+                clearInterval(timeout);
+                timeout = setTimeout(() => callback(optionInput.text()), 2000);
+            });
+        } else callback(option.val());
+    } else if (input && input.val() !== "") callback(input.val());
+}
+
+/**
  * Question enablers & disablers 
  */
 
@@ -127,6 +149,10 @@ function isQuestionCompleted(question) {
 
 function checkStepOne() {
     if (isQuestionCompleted(1)) {
+        getAnswerTo(1, value => {
+            console.log(value)
+        });
+
         enableQuestion(2);
         if (isQuestionCompleted(2)) {
             enableQuestion(3);
@@ -184,8 +210,7 @@ function checkStepThree() {
             showNextStep(nextStep);
             enableQuestion(7);
         }
-    })
-
+    });
 
     // Set step 1 validators by question number
     optionsValidator(1);
