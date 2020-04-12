@@ -114,7 +114,7 @@
 						</div>
 
 						<div class="step" data-step="1">
-							<div class="question-single" data-question="1">
+							<div class="question question-single" data-question="1">
 								<h4 class="question-title"><i class="fas fa-map-marker-alt"></i> ¿Dónde está tu negocio?</h4>
 								<p class="question-desc"><b>Si no encuentras tu ciudad, selecciona "Otra"</b> e introduce el nombre de tu ciudad manualmente.</p>
 								<div class="options-group">
@@ -151,7 +151,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="question-single disabled" data-question="2">
+							<div class="question question-single disabled" data-question="2">
 								<h4 class="question-title"><i class="fas fa-sitemap"></i> ¿Qué tipo de negocio es?</h4>
 								<p class="question-desc"><b>Si no encuentras tu sector adecuado, selecciona "Otro"</b> e introduce tu sector manualmente.</p>
 								<div class="options-group">
@@ -189,7 +189,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="question-single disabled" data-question="3">
+							<div class="question question-single disabled" data-question="3">
 								<h4 class="question-title"><i class="fas fa-concierge-bell"></i> ¿Qué servicios ofreces?</h4>
 								<p class="question-desc">Aquellos que prestas a tus clientes, y así poder recomendarte soluciones concretas. Recuerda que <b>puedes seleccionar varias opciones</b>:</p>
 								<div class="options-group">
@@ -248,8 +248,9 @@
 								</div>
 							</div>
 
-							<div class="step-footer">
-								<button type="button" class="step-control site-btn next disabled" data-next="2">Siguiente <i class="fas fa-arrow-right"></i></button type="button">
+							<div class="step-footer row align-items-center">
+								<span class="offset-4 col-4 text-center">Paso 1 de 3</span>
+								<button type="button" class="col-4 step-control site-btn next disabled" data-next="2">Siguiente <i class="fas fa-arrow-right"></i></button type="button">
 							</div>
 						</div>
 
@@ -257,53 +258,54 @@
 							<div class="question-group">
 								<h4 class="question-title">Datos económicos</h4>
 								<p class="question-desc">A continuación necesitamos algunos datos económicos sobre tu negocio pero <b>no te preocupes, solo necesitamos datos aproximados</b> para hacernos una idea general de tu situación y ayudarte a mantenerla.</p>
-								<div class="question-item row align-items-center" data-question="4">
+								<div class="question question-item row align-items-center" data-question="4">
 									<div class="col-md-6">
 										<label class="label" for="employees">Número de empleados</label>
 										<p>Número de empleados que tiene tu negocio. Si alguno se encuentra en regimen de jornada parcial cuentalo como 0,5.</p>
 									</div>
 									<div class="col-md-6 text-center">
-										<input id="employees" type="number" min="0" max="10" placeholder="# total de empleados">
+										<input id="employees" class="user-input" type="number" min="0" max="10" placeholder="# total de empleados">
 									</div>
 								</div>
 
-								<div class="question-item row align-items-center disabled" data-question="5">
+								<div class="question question-item row align-items-center disabled" data-question="5">
 									<div class="col-md-6">
 										<label class="label" for="yearly-billing">Facturación (anual ó mensual)</label>
 										<p>El importe de tu facturación aproximado. Danos la cifra anual o mensual, de la que te acuerdas.</p>
 									</div>
 									<div class="col-md-6 text-center">
-										<input id="yearly-billing" type="number" min="0" placeholder="€/año">
-										<span class="input-separator">ó</span>
-										<input id="monthly-billing" type="number" min="0" placeholder="€/mes">
+										<input id="yearly-billing" class="user-input" type="number" min="0" placeholder="€/año">
+										<span>ó</span>
+										<input id="monthly-billing" class="user-input" type="number" min="0" placeholder="€/mes">
 									</div>
 								</div>
 
-								<div class="question-item row align-items-center disabled" data-question="6">
+								<div class="question question-item row align-items-center disabled" data-question="6">
 									<div class="col-md-6">
 										<label class="label" for="rental">Coste del local</label>
 										<p>Gasto aproximado en alquiler o préstamo derivados del local. Si es de tu propiedad, selecciona la opción "En propiedad".</p>
 									</div>
 									<div class="col-md-6 text-center">
-										<input id="rental" type="number" min="0" placeholder="€/mes">
+										<input id="rental" class="user-input" type="number" min="0" placeholder="€/mes">
 										<div class="mt-2">
-											<input id="property" type="checkbox" value="En propiedad">
+											<input id="property" class="user-input" type="checkbox" value="property">
 											<label for="property">En propiedad</label>
 										</div>
 									</div>
 								</div>
 							</div>
 							
-							<div class="step-footer">
-								<button type="button" class="step-control site-btn sb-c2 prev" data-prev="1"><i class="fas fa-arrow-left"></i> Anterior</button>
-								<button type="button" class="step-control site-btn next disabled" data-next="3">Siguiente <i class="fas fa-arrow-right"></i></button>
+							<div class="step-footer row align-items-center">
+								<button type="button" class="col-4 step-control site-btn sb-c2 prev" data-prev="1"><i class="fas fa-arrow-left"></i> Anterior</button>
+								<span class="col-4 text-center">Paso 2 de 3</span>
+								<button type="button" class="col-4 step-control site-btn next disabled" data-next="3">Siguiente <i class="fas fa-arrow-right"></i></button>
 							</div>
 						</div>
 
 						<div class="step hidden" data-step="3">
 							<div class="question-group">
 								<h4 class="question-title">Datos de contacto</h4>
-								<div class="question-item row align-items-center" data-question="4">
+								<div class="question question-item row align-items-center" data-question="7">
 									<div class="col-md-6">
 										<label class="label" for="email">Correo electrónico</label>
 										<p>¿Donde quieres que te mandemos tu informe?</p>
@@ -313,7 +315,7 @@
 									</div>
 								</div>
 
-								<div class="question-item row align-items-center" data-question="4">
+								<div class="question question-item row align-items-center">
 									<div class="col-md-6">
 										<label class="label" for="extra">¿Quieres decirnos algo?</label>
 										<p>Cualquier comentario o problema que hayas encontrado nos ayuda a mejorar. ¡También puedes preguntarnos cualquier duda!</p>
@@ -323,22 +325,18 @@
 									</div>
 								</div>
 							</div>
-							<div class="step-footer">
-								<span class="step-control site-btn sb-c2 prev" data-prev="2"><i class="fas fa-arrow-left"></i> Anterior</span>
-								<span class="step-control site-btn submit disabled">Generar informe <i class="fas fa-arrow-right"></i></step>
+							<div class="step-footer row align-items-center">
+								<span class="col-4 step-control site-btn sb-c2 prev" data-prev="2"><i class="fas fa-arrow-left"></i> Anterior</span>
+								<span class="col-4 text-center">Paso 3 de 3</span>
+								<span class="col-4 step-control site-btn next disabled">Finalizar <i class="fas fa-flag-checkered"></i></step>
 							</div>
 						</div>
 
-						<div class="step hidden" data-step="success">
-						</div>
+						<div class="step hidden" data-step="success"></div>
 
-						<div class="step hidden" data-step="error">
+						<div class="step hidden" data-step="error"></div>
 
-						</div>
-
-						<div class="setp hidden" data-step="wip">
-
-						</div>
+						<div class="setp hidden" data-step="wip"></div>
 					</form>
 				</div>
 			</div>
