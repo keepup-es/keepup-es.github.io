@@ -707,6 +707,9 @@ Business signup page
 }
 
 .business-form .step.hidden { display: none; }
+.business-form .question[data-question="3"].disabled > .options-group {
+	opacity: 0;
+}
 
 .business-form .step .question-single {
 	display: inline-block;
@@ -866,7 +869,7 @@ Business signup page
 	min-width: 0;
 }
 
-.business-form .step .question-item input[type="email"] {
+.business-form .step input[type="email"] {
 	box-sizing: border-box;
 	padding: 10px;
 	border-radius: 6px;
