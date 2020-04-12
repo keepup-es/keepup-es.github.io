@@ -72,16 +72,21 @@ function getAnswerTo(question, callback) {
     let optionInput = element.find(".option-input");
     let input = element.find("input.user-input");
 
-
-    if (option && option.val() !== "") {
+    if (option.length && option.val() !== "") {
         if (option.val() === "other") {
             let timeout = null;
-            optionInput.on("input", e => {
+            optionInput.on("input", () => {
                 clearInterval(timeout);
                 timeout = setTimeout(() => callback(optionInput.text()), 2000);
             });
         } else callback(option.val());
-    } else if (input && input.val() !== "") callback(input.val());
+    } else if (input && input.val() !== "") {
+        let timeout = null;
+        input.on("input", () => {
+            clearInterval(timeout);
+            timeout = setTimeout(() => callback(input.val()), 2000);
+        });
+    };
 }
 
 /**
@@ -172,6 +177,9 @@ function checkStepOne() {
 
 function checkStepTwo() {
     if (isQuestionCompleted(4)) {
+        getAnswerTo(4, value => {
+            console.log(value)
+        });
         enableQuestion(5);
         if (isQuestionCompleted(5)) {
             enableQuestion(6);
