@@ -298,9 +298,16 @@ function storeEmail(data, callback) {
 function setButtonsHandlers() {
     // Next button handler
     let nextButtons = $("button.step-control.next");
+    console.log(nextButtons);
     nextButtons.on("click", event => {
         let button = $(event.target);
         let nextStep = button.attr("data-next");
+    gtag('event', 'business_form', {
+        'event_category': 'completed',
+        'event_label': nextStep-1,
+        'transport_type': 'beacon',
+        'event_callback': function(){console.log(true);}
+    });
 
         if (nextStep === "2" && checkStepOne()) {
             showStep(nextStep);
@@ -316,7 +323,12 @@ function setButtonsHandlers() {
     prevButtons.on("click", event => {
         let button = $(event.target);
         let prevStep = button.attr("data-prev");
-
+        gtag('event', 'business_form', {
+        'event_category': 'previous button',
+        'event_label': prevStep+1,
+        'transport_type': 'beacon',
+        'event_callback': function(){console.log(true);}
+    });
         if (prevStep === "2") showStep(prevStep);
         else if (prevStep === "1") showStep(prevStep);
     });
@@ -327,8 +339,24 @@ function setButtonsHandlers() {
         e.preventDefault();
         let data = getFormData();
         storeForm(data, success => {
-            if (success) showStep("success");
-            else showStep("error");
+            if (success) {
+            gtag('event', 'business_form', {
+            'event_category': 'finish button',
+            'event_label': 'success',
+            'transport_type': 'beacon',
+            'event_callback': function(){console.log(true);}
+            });
+                showStep("success");
+            }
+            else {
+                gtag('event', 'business_form', {
+                'event_category': 'finish button',
+                'event_label': 'failure',
+                'transport_type': 'beacon',
+                'event_callback': function(){console.log(true);}
+                });
+                showStep("error");
+            }
         });
     });
 
