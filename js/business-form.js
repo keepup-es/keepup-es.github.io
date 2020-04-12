@@ -173,9 +173,16 @@ function checkStepThree() {
 (function($) {
     // Next button handler
     let nextButtons = $("button.step-control.next");
+    console.log(nextButtons);
     nextButtons.on("click", event => {
         let button = $(event.target);
         let nextStep = button.attr("data-next");
+    gtag('event', 'business_form', {
+        'event_category': 'completed',
+        'event_label': nextStep-1,
+        'transport_type': 'beacon',
+        'event_callback': function(){console.log(true);}
+    });
 
         if (nextStep === "2" && checkStepOne()) {
             showNextStep(nextStep);

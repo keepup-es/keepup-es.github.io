@@ -4,9 +4,9 @@
 * as the event label. Setting the transport method to 'beacon' lets the hit be sent
 * using 'navigator.sendBeacon' in browser that support it.
 */
-var getLinks = function(url) {
-  gtag('event', 'click', {
-    'event_category': 'link',
+var getLinks = function(coming_from, url) {
+  gtag('event', 'link', {
+    'event_category': coming_from,
     'event_label': url,
     'transport_type': 'beacon',
     'event_callback': function(){document.location = url;}
