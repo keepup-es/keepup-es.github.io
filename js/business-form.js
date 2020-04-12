@@ -220,21 +220,16 @@ function isQuestionCompleted(question) {
 function checkStepOne() {
     if (isQuestionCompleted(1)) {
         getAnswerTo(1, location => {
-            console.log(location);
-            if (location !== "Madrid") {
-                resetForm();
-                showStep("wip-location");
-            } else enableQuestion(2);
+            if (location !== "Madrid") showStep("wip-location");
         }, 0);
 
+        enableQuestion(2);
         if (isQuestionCompleted(2)) {
             getAnswerTo(2, sector => {
-                if (sector !== "Salud y belleza") {
-                    resetForm();
-                    showStep("wip-sector");
-                } else enableQuestion(3);
+                if (sector !== "Salud y belleza") showStep("wip-sector");
             }, 0);
 
+            enableQuestion(3);
             if (isQuestionCompleted(3)) enableStepControls(1);
             else disableStepControls(1);
         } else {

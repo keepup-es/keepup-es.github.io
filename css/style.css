@@ -714,6 +714,8 @@ Business signup page
 .business-form .step.hidden { display: none; }
 .business-form .question[data-question="3"].disabled > .options-group {
 	opacity: 0;
+	visibility: hidden;
+	height: 0;
 }
 
 .business-form .step .question-single {
@@ -1039,6 +1041,8 @@ Responsive
 	.search-form {
 		margin-top: 40px;
 	}
+
+	.business-form { padding: 30px 40px; }
 }
 
 /* Large Mobile :480px. */
@@ -1069,6 +1073,8 @@ Responsive
 	.search-form {
 		margin-top: 40px;
 	}
+
+	.business-form { padding: 30px 40px; }
 }
 
 /* Small Mobile :320px. */
@@ -1098,4 +1104,6 @@ Responsive
 		position: relative;
 		margin-top: 20px;
 	}
+
+	.business-form { padding: 20px 30px; }
 }
