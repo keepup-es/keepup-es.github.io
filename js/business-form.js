@@ -339,7 +339,10 @@ function setButtonsHandlers() {
         
         let email = $('input#contact-location').val();
         getAnswerTo(1, location => {
-            storeEmail({ location, email }, console.log);
+            storeEmail({ location, email }, success => {
+                if (success) showStep("success");
+                else showStep("error");
+            });
         }, 0);
     });
 
@@ -350,7 +353,10 @@ function setButtonsHandlers() {
         
         let email = $('input#contact-sector').val();
         getAnswerTo(2, sector => {
-            storeEmail({ sector, email }, console.log);
+            storeEmail({ sector, email }, success => {
+                if (success) showStep("success");
+                else showStep("error");
+            });
         }, 0);
     });
 }
