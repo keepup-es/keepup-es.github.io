@@ -39,11 +39,6 @@
 	</script>
 </head>
 <body>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
-
 	<!-- Header section -->
 	<header class="header-section clearfix">
 		<a href="index.html" class="site-logo">
@@ -55,20 +50,19 @@
 			Menú
 		</label>
 		<input type="checkbox" id="menu-toggler">
-		
 		<ul class="main-menu">
 			<li><a href="index.html">Inicio</a></li>
-			<li><a href="#">¿Cómo funciona?</a></li>
-			<li><a href="#" class="colored">¡Quiero participar!</a>
+			<li><a href="index.html#how">¿Cómo funciona?</a></li>
+			<li><a href="index.html#info" class="colored">¡Quiero participar!</a>
 				<ul class="sub-menu">
 					<li>
-						<a href="negocios.html">
+						<a href="negocios.html" onclick="getLinks('Quiero Participar' ,'negocios.html'); return false;">
 							<i class="fas fa-store-alt"></i>
 							<b>Tengo un negocio</b>
 						</a>
 					</li>
 					<li>
-						<a href="contact.html">
+						<a href="particulares.html" onclick="getLinks('Quiero Participar', 'particulares.html'); return false;">
 							<i class="fas fa-hands-helping"></i>
 							<b>Quiero ayudar</b> a un negocio
 						</a>

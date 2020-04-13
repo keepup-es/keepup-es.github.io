@@ -55,20 +55,19 @@
 			Menú
 		</label>
 		<input type="checkbox" id="menu-toggler">
-		
 		<ul class="main-menu">
 			<li><a href="index.html">Inicio</a></li>
-			<li><a href="#">¿Cómo funciona?</a></li>
-			<li><a href="#" class="colored">¡Quiero participar!</a>
+			<li><a href="index.html#how">¿Cómo funciona?</a></li>
+			<li><a href="index.html#info" class="colored">¡Quiero participar!</a>
 				<ul class="sub-menu">
 					<li>
-						<a href="negocios.html">
+						<a href="negocios.html" onclick="getLinks('Quiero Participar' ,'negocios.html'); return false;">
 							<i class="fas fa-store-alt"></i>
 							<b>Tengo un negocio</b>
 						</a>
 					</li>
 					<li>
-						<a href="contacto.html">
+						<a href="particulares.html" onclick="getLinks('Quiero Participar', 'particulares.html'); return false;">
 							<i class="fas fa-hands-helping"></i>
 							<b>Quiero ayudar</b> a un negocio
 						</a>
@@ -83,14 +82,18 @@
 	<!-- Business info section start -->
 	<section class="business-info-section spad">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="section-title">
-						<h2>Tengo un negocio y necesito ayuda</h2>
-					</div>
+			<div class="row justify-content-between">
+				<div class="col-lg-5 text-center">
+					<img src="/img/negocio.svg" class="mb-5 mt-5" style="max-width: 450px;" alt="Seguimos trabajando"/>
 				</div>
 				<div class="col-lg-6">
+					<div class="section-title">
+						<h2>¡Tengo un negocio y necesito ayuda!</h2>
+					</div>
 					<p>Si tienes un negocio y estás pasando por momentos complicados, queremos ayudarte! Completa el formulario en 3 simples pasos y podremos analizar tu situación y proponerte soluciones. </p>
+				</div>
+				<div class="col-12 text-center">
+					<i class="fas fa-arrow-down" style="font-size: 40px;"></i>
 				</div>
 			</div>
 		</div>
@@ -322,7 +325,7 @@
 										<p>¿Donde quieres que te mandemos tu informe?</p>
 									</div>
 									<div class="col-md-6 text-center">
-										<input id="email" type="email" class="user-input" placeholder="ejemplo@gmail.com">
+										<input id="email" type="email" class="user-input" placeholder="ejemplo@test.com">
 									</div>
 								</div>
 
@@ -368,7 +371,7 @@
 										<label class="label" for="contact-location">Correo electrónico</label>
 									</div>
 									<div class="col-6">
-										<input id="contact-location" type="email" placeholder="ejemplo@gmail.com">
+										<input id="contact-location" type="email" placeholder="ejemplo@test.com">
 									</div>
 								</div>
 								<a class="mr-5" href="/negocios.html">Volver</a>
@@ -385,7 +388,7 @@
 										<label class="label" for="contact-sector">Correo electrónico</label>
 									</div>
 									<div class="col-6">
-										<input id="contact-sector" type="email" placeholder="ejemplo@gmail.com">
+										<input id="contact-sector" type="email" placeholder="ejemplo@test.com">
 									</div>
 								</div>
 								<a class="mr-5" href="/negocios.html">Volver</a>
@@ -397,29 +400,24 @@
 			</div>
 		</div>
 	</section>
-				
 	<!-- Signup section end -->
 	
 	<!-- Footer section -->
-	<footer class="footer-section">
+	<footer class="footer-section justify-content-center">
 		<div class="container">
 			<div class="row">
-				<div class="col-xl-6 col-lg-7 order-lg-2">
-					<div class="row justify-content-end">
-						<div class="col-6">
-							<div class="footer-widget">
-								<h2>Enlaces de interés</h2>
-								<ul>
-									<li><a href="">Sobre nosotros</a></li>
-									<li><a href="">Preguntas frecuentes</a></li>
-									<li><a href="">Información Legal</a></li>
-									<li><a href="">Contacto</a></li>
-								</ul>
-							</div>
-						</div>
+				<div class="col-lg-6 col-md-12">
+					<div class="footer-widget">
+						<h2>Enlaces de interés</h2>
+						<ul>
+							<li><a href="negocios.html">Registra tu negocio</a></li>
+							<li><a href="particulares.html">Colabora como usuario</a></li>
+							<li><a href="legal.html">Información Legal</a></li>
+							<li><a href="contacto.html">Contacto</a></li>
+						</ul>
 					</div>
 				</div>
-				<div class="col-xl-6 col-lg-5 order-lg-1">
+				<div class="col-lg-6 col-md-12 text-right">
 					<img src="img/logo.svg" alt="" height="40">
 					<div class="copyright">
 						Copyright &copy;2020 All rights reserved</br>

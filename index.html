@@ -36,6 +36,10 @@
   		function gtag(){dataLayer.push(arguments);}
   		gtag('js', new Date());
   		gtag('config', 'UA-163422850-1');
+
+		function scrollto(selector, behavior = "smooth") {
+			document.querySelector(selector).scrollIntoView({ behavior });
+		}
 	</script>
 
 </head>
@@ -54,8 +58,8 @@
 		<input type="checkbox" id="menu-toggler">
 		<ul class="main-menu">
 			<li><a href="index.html">Inicio</a></li>
-			<li><a href="#benefits">¿Cómo funciona?</a></li>
-			<li><a href="#" class="colored">¡Quiero participar!</a>
+			<li><span onclick="scrollto('#how')">¿Cómo funciona?</span></li>
+			<li><span class="colored">¡Quiero participar!</span>
 				<ul class="sub-menu">
 					<li>
 						<a href="negocios.html" onclick="getLinks('Quiero Participar' ,'negocios.html'); return false;">
@@ -64,7 +68,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="usuarios.html" onclick="getLinks('usuarios.html'); return false;">
+						<a href="/particulares.html" onclick="getLinks('Quiero Participar', 'particulares.html'); return false;">
 							<i class="fas fa-hands-helping"></i>
 							<b>Quiero ayudar</b> a un negocio
 						</a>
@@ -95,7 +99,7 @@
 	<!-- Hero section end -->
 
 	<!-- Intro section -->
-	<section class="intro-business-section spad ">
+	<section id="info" class="intro-business-section spad">
 		<div class="container text-white">
 			<div class="row">
 				<div class="col-lg-6">
@@ -104,7 +108,7 @@
 					</div>
 				</div>
 				<div class="col-lg-6">
-					<p>¿Necesitas ayuda, nuevas opciones? Entra aquí, registra tu negocio (no tiene coste). Déjanos ayudarte. </p>
+					<p>¿Necesitas ayuda, nuevas opciones? La situación que vivimos generada por el coronavirus ha creado un estado excepcional de confinamiento que ha puesto en riesgo muchos negocios en la actualidad. Como dueño de un negocio, ¿necesitas ayuda, nuevas opciones? Entra aquí, registra tu negocio (no tiene coste por supuesto). Déjanos ayudarte.  </p>
 					<a href="negocios.html" class="site-btn">Registra tu negocio</a>
 				</div>
 			</div>
@@ -117,13 +121,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
-					<p>¿Quires arrimar el hombro en estos malos momentos? Entra aquí y localiza el negocio que quieres apoyar. Te explicamos como.</p>
-					<a href="usuarios.html" class="site-btn sb-c2">Empezar a colaborar</a>
-				</div>
-				<div class="col-lg-6">
 					<div class="section-title">
 						<h2>¿Buscas un negocio que apoyar?</h2>
 					</div>
+				</div>
+				<div class="col-lg-6">
+					<p>¿Quires arrimar el hombro en estos malos momentos? Entra aquí y localiza el negocio que quieres apoyar. Te explicamos como.</p>
+					<a href="particulares.html" class="site-btn sb-c2">Empezar a colaborar</a>
 				</div>
 			</div>
 		</div>
@@ -131,7 +135,7 @@
 	<!-- Intro section end -->
 
 	<!-- How section -->
-	<section class="how-section spad">
+	<section class="how-section spad" id="how">
 		<div class="container text-white">
 			<div class="section-title">
 				<h2>¿Cómo funciona?</h2>
@@ -140,16 +144,16 @@
 				<div class="col-md-4">
 					<div class="how-item">
 						<div class="hi-icon">
-							<img src="img/icons/brain.png" alt="">
+							<i class="fas fa-search-dollar"></i>
 						</div>
-						<h4>Estudio/Análisis de tu negocio</h4>
+						<h4>Análisis de tu negocio</h4>
 						<p>Realizamos un análisis financiero de tu negocio y su continuidad como punto de partida. El objetivo es facilitarte la vuelta a la normalidad post-coronavirus cuanto antes. </p>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="how-item">
 						<div class="hi-icon">
-							<img src="img/icons/pointer.png" alt="">
+							<i class="fas fa-receipt"></i>
 						</div>
 						<h4>Informe sobre tu negocio</h4>
 						<p>En base a un estudio de tu negocio, te damos ideas para solventar tu problema de liquidez. </p>
@@ -158,7 +162,7 @@
 				<div class="col-md-4">
 					<div class="how-item">
 						<div class="hi-icon">
-							<img src="img/icons/smartphone.png" alt="">
+							<i class="fas fa-street-view"></i>
 						</div>
 						<h4>¡Actívalo! Ponlo en marcha</h4>
 						<p>Comparte los objetivos de tu plan, cuéntaselo a tus clientes, publícalo en redes. Te proporcionamos una plataforma para que tus clientes y gente interesada te pueda ayudar.</p>
@@ -170,7 +174,7 @@
 	<!-- How section end -->
 
 	<!-- Premium section end -->
-	<section id="benefits" class="premium-section spad">
+	<section class="premium-section spad">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
@@ -185,28 +189,28 @@
 			<div class="row">
 				<div class="col-lg-3 col-sm-6">
 					<div class="premium-item">
-						<img src="img/premium/1.jpg" alt="">
-						<h4>Rápido diagnóstico</h4>
+						<img src="img/diagnostico-rapido.svg" alt="Diagnóstico rápido">
+						<h4>Diagnóstico rápido</h4>
 						<p>Acorde a las necesidades de tu negocio</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-sm-6">
 					<div class="premium-item">
-						<img src="img/premium/2.jpg" alt="">
+						<img src="img/nuestra-plataforma.svg" alt="Nuestra plataforma">
 						<h4>Nuestra plataforma</h4>
 						<p>Tendrás a tu disposición una plataforma que te de visibilidad y en la que los clientes te ayuden</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-sm-6">
 					<div class="premium-item">
-						<img src="img/premium/3.jpg" alt="">
+						<img src="img/tu-negocio.svg" alt="Tu negocio">
 						<h4>Tú negocio</h4>
 						<p>Seguro, el Know how de tu negocio se queda contigo</p>
 					</div>
 				</div>
 				<div class="col-lg-3 col-sm-6">
 					<div class="premium-item">
-						<img src="img/premium/4.jpg" alt="">
+						<img src="img/gratis.svg" alt="Gratis">
 						<h4>Gratis</h4>
 						<p>Totalmente gratuito y disponible en cualquier momento </p>
 					</div>
@@ -220,11 +224,11 @@
 	<section class="help-contact-section spad">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-md-3 col-sm-12">
+				<div class="col-lg-4 col-md-6 col-sm-12">
 					<a href="negocios.html" class="site-btn">Registra tu negocio</a>
 				</div>
-				<div class="col-md-3 col-sm-12">
-					<a href="usuarios.html" class="site-btn sb-c2">Colabora como usuario</a>
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<a href="particulares.html" class="site-btn sb-c2">Colabora como usuario</a>
 				</div>
 			</div>
 		</div>
@@ -232,25 +236,21 @@
 	<!-- Help & contact section end -->
 
 	<!-- Footer section -->
-	<footer class="footer-section">
+	<footer class="footer-section justify-content-center">
 		<div class="container">
 			<div class="row">
-				<div class="col-xl-6 col-lg-7 order-lg-2">
-					<div class="row justify-content-end">
-						<div class="col-6">
-							<div class="footer-widget">
-								<h2>Enlaces de interés</h2>
-								<ul>
-									<li><a href="negocios.html">Registra tu negocio</a></li>
-									<li><a href="usuarios.html">Colabora como usuario</a></li>
-									<li><a href="legal.html">Información Legal</a></li>
-									<li><a href="contacto.html">Contacto</a></li>
-								</ul>
-							</div>
-						</div>
+				<div class="col-lg-6 col-md-12">
+					<div class="footer-widget">
+						<h2>Enlaces de interés</h2>
+						<ul>
+							<li><a href="negocios.html">Registra tu negocio</a></li>
+							<li><a href="particulares.html">Colabora como usuario</a></li>
+							<li><a href="legal.html">Información Legal</a></li>
+							<li><a href="contacto.html">Contacto</a></li>
+						</ul>
 					</div>
 				</div>
-				<div class="col-xl-6 col-lg-5 order-lg-1">
+				<div class="col-lg-6 col-md-12 text-right">
 					<img src="img/logo.svg" alt="" height="40">
 					<div class="copyright">
 						Copyright &copy;2020 All rights reserved</br>

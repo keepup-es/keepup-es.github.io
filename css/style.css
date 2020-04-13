@@ -226,6 +226,7 @@ Header section
 	position: relative;
 }
 
+.main-menu li span,
 .main-menu li a {
 	display: block;
 	font-size: 16px;
@@ -234,16 +235,20 @@ Header section
 	margin-left: 60px;
 	transition: color .2s ease-in-out, 
 				background-color .2s ease-in-out;
+	cursor: pointer;
 }
 
+.main-menu li span:hover,
 .main-menu li a:hover {
 	color: #fc0254;
 }
 
+.main-menu li:first-child span,
 .main-menu li:first-child a {
 	margin-left: 0;
 }
 
+.main-menu li span.colored,
 .main-menu li a.colored {
 	color: #fc0254;
 	font-weight: bold;
@@ -254,6 +259,7 @@ Header section
 	border-radius: 30px;
 }
 
+.main-menu li span.colored:hover,
 .main-menu li a.colored:hover {
 	color: #fff;
 	background: #fc0254;
@@ -268,13 +274,14 @@ Header section
 .main-menu .sub-menu {
 	position: absolute;
 	list-style: none;
-	width: 300px;
-	left: 60px;
+	width: 340px;
 	top: 100%;
+	left: 50%;
 	padding: 20px 0;
 	visibility: hidden;
 	opacity: 0;
 	margin-top: 50px;
+	margin-left: -170px;
 	background: #fff;
 	z-index: 99;
 	-webkit-transition: all 0.4s;
@@ -404,10 +411,11 @@ How section
 	margin-bottom: 25px;
 }
 
-.how-item .hi-icon img {
+.how-item .hi-icon i {
 	position: absolute;
 	right: -8px;
 	bottom: 0;
+	font-size: 40px;
 }
 
 .how-item h4 {
@@ -912,6 +920,43 @@ Business signup page
 }
 
 /* ----------------
+Business signup page
+ -------------------*/
+
+.users-info-section #users-form {
+	display: inline-block;
+	vertical-align: top;
+	width: auto;
+	height: auto;
+	padding: 25px 30px;
+	background: #ddd;
+	border-radius: 6px;
+	text-align: center;
+}
+
+.users-info-section #users-form label {
+	display: block;
+}
+
+.users-info-section #users-form input {
+	display: inline-block;
+	vertical-align: top;
+	box-sizing: border-box;
+	padding: 10px;
+	border-radius: 6px;
+	outline: none;
+	border: 1px solid #ccc;
+	text-align: center;
+	min-width: 180px;
+}
+
+.users-info-section #users-form button {
+	padding: 15px 20px;
+	display: block;
+	margin: auto;
+}
+
+/* ----------------
 Responsive
  -------------------*/
 
@@ -924,11 +969,9 @@ Responsive
 /* Medium screen : 992px. */
 
 @media only screen and (min-width: 1200px) and (max-width: 1360px) {
-	.main-menu li a {
+	.main-menu li a,
+	.main-menu li span {
 		margin-left: 25px;
-	}
-	.main-menu .sub-menu {
-		left: 25px;
 	}
 }
 
@@ -939,11 +982,9 @@ Responsive
 		padding-left: 15px;
 		padding-right: 20px;
 	}
-	.main-menu li a {
+	.main-menu li a,
+	.main-menu li span {
 		margin-left: 15px;
-	}
-	.main-menu .sub-menu {
-		left: 15px;
 	}
 	.hr-img img {
 		min-width: 500px;
@@ -971,7 +1012,7 @@ Responsive
 	.main-menu {
 		position: absolute;
 		right: 0;
-		width: 300px;
+		width: 340px;
 		background-color: #08192d;
 		opacity: 0;
 		visibility: hidden;
@@ -983,8 +1024,11 @@ Responsive
 	.main-menu li { display: block;}
 
 	.main-menu li a,
+	.main-menu li span,
 	.main-menu li:first-child a,
-	.main-menu li a.colored  {
+	.main-menu li:first-child span,
+	.main-menu li a.colored,
+	.main-menu li span.colored  {
 		display: block;
 		padding: 10px 25px;
 		margin: 5px 0; 
@@ -994,6 +1038,7 @@ Responsive
 
 	.main-menu li .sub-menu {
 		left: 0;
+		margin-left: auto;
 	}
 	
 	.menu-toggle {
@@ -1082,7 +1127,7 @@ Responsive
 		font-size: 36px;
 	}
 	.header-section {
-		padding: 0;
+		padding: 0 15px;
 	}
 	.contact-warp {
 		padding: 100px 15px;
