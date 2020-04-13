@@ -348,7 +348,7 @@ function setButtonsHandlers() {
         let prevStep = button.attr("data-prev");
         gtag('event', 'business_form', {
         'event_category': 'previous button',
-        'event_label': prevStep+1,
+        'event_label': parseInt(prevStep)+1,
         'transport_type': 'beacon',
         'event_callback': function(){console.log(true);}
     });
@@ -387,10 +387,16 @@ function setButtonsHandlers() {
     let contactLocationButton = $("button#contact-location-submit");
     contactLocationButton.on("click", e => {
         e.preventDefault();
-        
+
         let email = $('input#contact-location').val();
         getAnswerTo(1, location => {
             storeEmail({ location, email }, success => {
+                gtag('event', 'avisame', {
+                    'event_category': 'ciudad erronea',
+                    'event_label': location,
+                    'transport_type': 'beacon',
+                    'event_callback': function(){console.log(true);}
+                    });
                 if (success) showStep("success");
                 else showStep("error");
             });
@@ -401,10 +407,16 @@ function setButtonsHandlers() {
     let contactSectorButton = $("button#contact-sector-submit");
     contactSectorButton.on("click", e => {
         e.preventDefault();
-        
+
         let email = $('input#contact-sector').val();
         getAnswerTo(2, sector => {
             storeEmail({ sector, email }, success => {
+                gtag('event', 'avisame', {
+                'event_category': 'sector erroneo',
+                'event_label': sector,
+                'transport_type': 'beacon',
+                'event_callback': function(){console.log(true);}
+                });
                 if (success) showStep("success");
                 else showStep("error");
             });

@@ -349,16 +349,16 @@
 						<div class="step hidden" data-step="success">
 							<div class="text-center">
 								<h3 class="mb-5">¡Gracias!</h3>
-								<p>Los datos se han guardado, en breve nos pondremos en contacto. Si tiene alguna duda no deje de <a href="/contacto.html">contactarnos</a>.</a></p>
-								<a class="site-btn mt-5" href="negocios.html">Empezar de nuevo</a>
+								<p>Los datos se han guardado, en breve nos pondremos en contacto. Si tiene alguna duda no deje de <a href="contacto.html" onclick="getLinks('negocios' ,'conctacto.html'); return false;">contactarnos</a>.</a></p>
+								<a class="site-btn mt-5" href="negocios.html" onclick="getLinks('Empezar de nuevo' ,'negocios.html'); return false;">Empezar de nuevo</a>
 							</div>
 						</div>
 
 						<div class="step hidden" data-step="error">
 							<div class="text-center">
 								<h3 class="mb-5">¡Ops! Ha habido un error...</h3>
-								<p>Los datos no se han podido guardar, inténtalo de nuevo o <a href="/contacto.html">contacte con nosotros</a>.</a></p>
-								<a class="site-btn sb-c2 mt-5" href="negocios.html">Intentar de nuevo</a>
+								<p>Los datos no se han podido guardar, inténtalo de nuevo o >contacte con nosotros</a>.</a></p>
+								<a class="site-btn sb-c2 mt-5" href="negocios.html"  onclick="getLinks('Fallo en el formulario' ,'negocios.html'); return false;">Intentar de nuevo</a>
 							</div>
 						</div>
 
@@ -374,8 +374,8 @@
 										<input id="contact-location" type="email" placeholder="ejemplo@test.com">
 									</div>
 								</div>
-								<a class="mr-5" href="/negocios.html">Volver</a>
-								<button type="button" id="contact-location-submit" class="site-btn mt-5">¡Avisame!</button>
+								<a class="mr-5" href="negocios.html"  onclick="getbuttons('volver', 'ciudad erronea' ,'negocios.html');">Volver</a>
+								<button type="button" id="contact-location-submit" class="site-btn mt-5" >¡Avísame!</button>
 							</div>
 						</div>
 
@@ -391,7 +391,7 @@
 										<input id="contact-sector" type="email" placeholder="ejemplo@test.com">
 									</div>
 								</div>
-								<a class="mr-5" href="/negocios.html">Volver</a>
+								<a class="mr-5" href="negocios.html">Volver</a>
 								<button type="button" id="contact-sector-submit" class="site-btn mt-5">¡Avisame!</button>
 							</div>
 						</div>
@@ -403,17 +403,17 @@
 	<!-- Signup section end -->
 	
 	<!-- Footer section -->
-	<footer class="footer-section justify-content-center">
+	<footer class="footer-section">
 		<div class="container">
-			<div class="row">
+			<div class="row justify-content-between">
 				<div class="col-lg-6 col-md-12">
 					<div class="footer-widget">
 						<h2>Enlaces de interés</h2>
 						<ul>
-							<li><a href="negocios.html">Registra tu negocio</a></li>
-							<li><a href="particulares.html">Colabora como usuario</a></li>
-							<li><a href="legal.html">Información Legal</a></li>
-							<li><a href="contacto.html">Contacto</a></li>
+							<li><a href="negocios.html" onclick="getLinks('Enlaces Interés' ,'negocios.html');">Registra tu negocio</a></li>
+							<li><a href="particulares.html" onclick="getLinks('Enlaces Interés' ,'particulares.html');">Colabora como usuario</a></li>
+							<li><a href="legal.html" onclick="getLinks('Enlaces Interés' ,'legal.html');">Información Legal</a></li>
+							<li><a href="contacto.html" onclick="getLinks('Enlaces Interés' ,'contacto.html');">Contacto</a></li>
 						</ul>
 					</div>
 				</div>

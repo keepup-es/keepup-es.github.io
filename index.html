@@ -89,7 +89,7 @@
 						<div class="hs-text">
 							<h2><span>Ayuda</span> a tu negocio</h2>
 							<p>Tanto si eres dueño de un negocio en busca de opciones en estos malos momentos, como si eres su cliente, esta es tu <span>plataforma</span>. ¡Entra y pide o proporciona tu ayuda!</p>
-							<a href="negocios.html" class="site-btn">Registra tu negocio</a>
+							<a href="negocios.html" class="site-btn" onclick="getbuttons('registra tu negocio', 'copy1' ,'negocios.html');">Registra tu negocio</a>
 						</div>
 					</div>
 				</div>
@@ -108,8 +108,8 @@
 					</div>
 				</div>
 				<div class="col-lg-6">
-					<p>¿Necesitas ayuda, nuevas opciones? La situación que vivimos generada por el coronavirus ha creado un estado excepcional de confinamiento que ha puesto en riesgo muchos negocios en la actualidad. Como dueño de un negocio, ¿necesitas ayuda, nuevas opciones? Entra aquí, registra tu negocio (no tiene coste por supuesto). Déjanos ayudarte.  </p>
-					<a href="negocios.html" class="site-btn">Registra tu negocio</a>
+					<p>¿Necesitas ayuda, nuevas opciones? Entra aquí, registra tu negocio (no tiene coste). Déjanos ayudarte. </p>
+					<a href="negocios.html" class="site-btn"  onclick="getbuttons('registra tu negocio', 'copy2' ,'negocios.html');">Registra tu negocio </a>
 				</div>
 			</div>
 		</div>
@@ -224,11 +224,11 @@
 	<section class="help-contact-section spad">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<a href="negocios.html" class="site-btn">Registra tu negocio</a>
+				<div class="col-md-3 col-sm-12">
+					<a href="negocios.html" class="site-btn"  onclick="getbuttons('registra tu negocio', 'end of index' ,'negocios.html');">Registra tu negocio</a>
 				</div>
-				<div class="col-lg-4 col-md-6 col-sm-12">
-					<a href="particulares.html" class="site-btn sb-c2">Colabora como usuario</a>
+				<div class="col-md-3 col-sm-12">
+					<a href="particulares.html" class="site-btn sb-c2"  onclick="getbuttons('colabora como usuario', 'end of index' ,'particulares.html');">Colabora como usuario</a>
 				</div>
 			</div>
 		</div>
@@ -236,17 +236,17 @@
 	<!-- Help & contact section end -->
 
 	<!-- Footer section -->
-	<footer class="footer-section justify-content-center">
+	<footer class="footer-section">
 		<div class="container">
-			<div class="row">
+			<div class="row justify-content-between">
 				<div class="col-lg-6 col-md-12">
 					<div class="footer-widget">
 						<h2>Enlaces de interés</h2>
 						<ul>
-							<li><a href="negocios.html">Registra tu negocio</a></li>
-							<li><a href="particulares.html">Colabora como usuario</a></li>
-							<li><a href="legal.html">Información Legal</a></li>
-							<li><a href="contacto.html">Contacto</a></li>
+							<li><a href="negocios.html" onclick="getLinks('Enlaces Interés' ,'negocios.html');">Registra tu negocio</a></li>
+							<li><a href="particulares.html" onclick="getLinks('Enlaces Interés' ,'particulares.html');">Colabora como usuario</a></li>
+							<li><a href="legal.html" onclick="getLinks('Enlaces Interés' ,'legal.html');">Información Legal</a></li>
+							<li><a href="contacto.html" onclick="getLinks('Enlaces Interés' ,'contacto.html');">Contacto</a></li>
 						</ul>
 					</div>
 				</div>
@@ -267,9 +267,8 @@
 			</div>
 		</div>
 	</footer>
-
-	<script src="js/Analyticstrackers.js"></script>
-
 	<!-- Footer section end -->
+	
+	<script src="js/Analyticstrackers.js"></script>
 	</body>
 </html>
