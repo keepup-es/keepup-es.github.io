@@ -390,7 +390,7 @@ Intro section
 	padding-top: 10px;
 }
 
-.intro-business-section {
+.intro-users-section {
 	background: #0a183d;
 }
 
@@ -402,7 +402,11 @@ How section
 	background-color: #0a183d;
 }
 
-.how-item .hi-icon {
+.how-section.white {
+	background-color: #fff;
+}
+
+.how-section .how-item .hi-icon {
 	position: relative;
 	width: 57px;
 	height: 57px;
@@ -411,20 +415,28 @@ How section
 	margin-bottom: 25px;
 }
 
-.how-item .hi-icon i {
+.how-section .how-item .hi-icon i {
 	position: absolute;
 	right: -8px;
 	bottom: 0;
 	font-size: 40px;
 }
 
-.how-item h4 {
+.how-section.white .how-item .hi-icon i {
+	color: #0a183d
+}
+
+.how-section .how-item h4 {
 	margin-bottom: 25px;
 }
 
-.how-item p {
+.how-section .how-item p {
 	font-weight: 400;
 	opacity: 0.6;
+}
+
+.how-section.white .how-item p {
+	opacity: 1;
 }
 
 /* ----------------
@@ -919,8 +931,43 @@ Business signup page
 	cursor: not-allowed;
 }
 
+#scroll-down {
+	color: #0a183d;
+	animation-iteration-count: infinite;
+	animation-duration: 1.5s;
+	animation: bounce 3.6s ease infinite;
+	transform-origin: 50% 50%;
+}
+
+@keyframes bounce {
+	0% {
+	  transform: translateY(0);
+	}
+	5.55556% {
+	  transform: translateY(0);
+	}
+	11.11111% {
+	  transform: translateY(0);
+	}
+	22.22222% {
+	  transform: translateY(-15px);
+	}
+	27.77778% {
+	  transform: translateY(0);
+	}
+	33.33333% {
+	  transform: translateY(-15px);
+	}
+	44.44444% {
+	  transform: translateY(0);
+	}
+	100% {
+	  transform: translateY(0);
+	}
+  }
+
 /* ----------------
-Business signup page
+Users signup page
  -------------------*/
 
 .users-info-section #users-form {
