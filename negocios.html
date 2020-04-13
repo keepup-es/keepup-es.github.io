@@ -90,7 +90,7 @@
 					<div class="section-title">
 						<h2>¡Tengo un negocio y necesito ayuda!</h2>
 					</div>
-					<p>Si tienes un negocio y estás pasando por momentos complicados, queremos ayudarte! Completa el formulario en 3 simples pasos y podremos analizar tu situación y proponerte soluciones. </p>
+					<p>Si tienes un negocio y estás pasando por momentos complicados, queremos ayudarte a salir adelante cuánto antes. Completa el siguiente formulario en 3 simples pasos y lanzamos el proceso de forma <b>totalmente gratuita</b>. </p>
 				</div>
 				<div class="col-12 text-center">
 					<i class="fas fa-arrow-down" style="font-size: 40px;"></i>
@@ -288,9 +288,9 @@
 										<p>El importe de tu facturación aproximado. Danos la cifra anual o mensual, de la que te acuerdas.</p>
 									</div>
 									<div class="col-md-6 text-center">
-										<input id="yearly-billing" class="user-input" type="number" min="0" placeholder="€/año">
+										<input id="yearly-billing" class="user-input" type="number" min="0" step="1000" placeholder="€/año">
 										<span>ó</span>
-										<input id="monthly-billing" class="user-input" type="number" min="0" placeholder="€/mes">
+										<input id="monthly-billing" class="user-input" type="number" min="0" step="500" placeholder="€/mes">
 									</div>
 								</div>
 
@@ -300,7 +300,7 @@
 										<p>Gasto aproximado en alquiler o préstamo derivados del local. Si es de tu propiedad, selecciona la opción "En propiedad".</p>
 									</div>
 									<div class="col-md-6 text-center">
-										<input id="rental" name="rental" class="user-input" type="number" min="0" placeholder="€/mes">
+										<input id="rental" name="rental" class="user-input" type="number" min="0" step="100" placeholder="€/mes">
 										<div class="mt-2">
 											<input id="property" class="user-input" type="checkbox" value="property">
 											<label for="property">En propiedad</label>
